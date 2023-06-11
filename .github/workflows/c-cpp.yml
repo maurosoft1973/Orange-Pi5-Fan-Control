@@ -10,13 +10,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout
+      uses: actions/checkout@v3
     - name: Build
       run:  | 
         sudo apt install -y libwiringpi-dev
         make all
     - name: Release
       uses: softprops/action-gh-release@v1
-      if: startsWith(github.ref, 'refs/tags/')
       with:
         files: orange_pi5_fan_control
