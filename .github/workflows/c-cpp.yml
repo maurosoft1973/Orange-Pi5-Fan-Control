@@ -12,7 +12,5 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - run:  | 
-        sudo apt install -y git build-essential
-        git clone https://github.com/orangepi-xunlong/wiringOP.git
-        cd wiringOP && ./build clean &&  ./build && cd ..
+        sudo apt install -y libwiringpi-dev
         make all
