@@ -12,11 +12,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: install
-    - run: |
-        apt install -y git build-essential
-        git clone https://github.com/orangepi-xunlong/wiringOP.git
-        cd wiringOP
-        ./build clean
-        ./build
+    - run:  apt install -y git build-essential
+    - name: clone   
+    - run: git clone https://github.com/orangepi-xunlong/wiringOP.git
+    - name: build
+    - run: cd wiringOP && ./build clean &&  ./build && ..
     - name: make
       run: make all
