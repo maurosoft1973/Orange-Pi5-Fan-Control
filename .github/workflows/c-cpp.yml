@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: install
-    - run:  apt install -y git build-essential
-    - run: git clone https://github.com/orangepi-xunlong/wiringOP.git
-    - run: cd wiringOP && ./build clean &&  ./build && ..
-    - run: make all
+    - run:  | 
+        apt install -y git build-essential
+        git clone https://github.com/orangepi-xunlong/wiringOP.git
+        cd wiringOP && ./build clean &&  ./build && cd ..
+        make all
