@@ -20,3 +20,7 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         files: orange_pi5_fan_control
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
