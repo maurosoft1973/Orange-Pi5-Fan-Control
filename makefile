@@ -1,4 +1,5 @@
-all: orange-pi5-fan-control install clean
+all: orange-pi5-fan-control clean
+install: orange-pi5-fan-control install clean
 
 .ONESHELL:
 orange-pi5-fan-control:
