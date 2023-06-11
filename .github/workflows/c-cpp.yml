@@ -23,3 +23,5 @@ jobs:
         prerelease: false
         files: |
           orange_pi5_fan_control
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
