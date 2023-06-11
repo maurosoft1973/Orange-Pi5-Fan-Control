@@ -11,6 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - run:  | 
+    - name: Build
+      run:  | 
         sudo apt install -y libwiringpi-dev
         make all
+    - name: Upload Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ github.event.release.upload_url }}
+        asset_path: ./orange_pi5_fan_control
+        asset_name: orange_pi5_fan_control
