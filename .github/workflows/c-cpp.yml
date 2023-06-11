@@ -17,9 +17,9 @@ jobs:
         sudo apt install -y libwiringpi-dev
         make all
     - name: Release
-      uses: softprops/action-gh-release@v1
+    - uses: "marvinpinto/action-automatic-releases@latest"
       with:
-        files: /home/runner/work/orange-pi5-fan-control/orange-pi5-fan-control/orange_pi5_fan_control
-        tag_name: ${{ github.ref }}
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        prerelease: false
+        files: |
+          orange_pi5_fan_control
